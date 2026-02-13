@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { label: "Numbers", href: "#numbers" },
   { label: "Framework", href: "#framework" },
   { label: "Case Studies", href: "#cases" },
+  { label: "CelcomDigi", href: "#celcomdigi" },
   { label: "90-Day Plan", href: "#plan" },
   { label: "Experiments", href: "#experiments" },
   { label: "Tools", href: "#tools" },
@@ -370,6 +371,219 @@ function CaseStudies() {
   );
 }
 
+/* ─── CELCOMDIGI GROWTH OPPORTUNITY ─── */
+const CD_PROBLEMS = [
+  {
+    icon: "⚠️",
+    title: "72% Migration Gap",
+    stat: "5.5M / 20M",
+    desc: "Only 5.5M registered on the new app out of 20M+ subscribers after 3 months. Old Celcom Life & MyDigi apps deprecated Dec 2025. Every unconverted user is a churn risk.",
+    severity: "critical",
+  },
+  {
+    icon: "⭐",
+    title: "1.6-Star App Store Rating",
+    stat: "1.6 / 5.0",
+    desc: "7,400+ ratings on iOS App Store with 1.6 stars. #2 in Utilities category but rating is destroying organic installs and brand trust. Negative reviews compound — each 1-star review costs ~20 potential downloads.",
+    severity: "critical",
+  },
+  {
+    icon: "💳",
+    title: "Batch Payment Removed",
+    stat: "Top complaint",
+    desc: "Users with multiple family lines can no longer pay all bills at once — must pay each individually. Regression from old apps. Directly hurts high-ARPU family plan users (postpaid, highest LTV segment).",
+    severity: "high",
+  },
+  {
+    icon: "📱",
+    title: "Multi-Line Visibility Broken",
+    stat: "Verified Nov 2025",
+    desc: "Users with 3+ numbers under one account can't see all lines after migration. Critical for family plan managers who control 3-5 lines — these are your highest-value customers.",
+    severity: "high",
+  },
+  {
+    icon: "🐌",
+    title: "App Perceived as Bloated",
+    stat: "Play Store reviews",
+    desc: "Users report the app is 'unnecessarily heavy' with 'too many bells and whistles.' Top-up flow described as a 'nightmare.' The old apps were lighter and more intuitive.",
+    severity: "medium",
+  },
+  {
+    icon: "🔔",
+    title: "Shallow Engagement Loops",
+    stat: "7-day streak only",
+    desc: "Daily streak is a start, but lacks depth. No progressive rewards, no milestone unlocks, no gamification tied to actual usage (pay bill → reward, refer friend → reward). Wednesday 3:21 PM surprise is gimmicky without retention data backing.",
+    severity: "medium",
+  },
+];
+
+const CD_PLAYBOOK = [
+  {
+    title: "Migration Funnel Rescue",
+    subtitle: "Close the 72% gap",
+    icon: "🎯",
+    actions: [
+      "Instrument migration funnel: old app prompt → download → sign up → verify → first action",
+      "Identify exact drop-off point (hypothesis: eKYC verification is the wall)",
+      "A/B test simplified migration: 'Transfer my account in 1 tap' vs current multi-step flow",
+      "Push/SMS campaign to remaining 14.5M users segmented by tenure and plan type",
+      "Incentivize migration: bonus data, exclusive rewards only on new app",
+    ],
+    impact: "Target: 60% migration rate within 6 months (+7M users)",
+  },
+  {
+    title: "App Store Rating Recovery",
+    subtitle: "From 1.6★ to 3.5★ in 90 days",
+    icon: "⭐",
+    actions: [
+      "Implement smart review prompts: trigger ONLY after positive moments (successful bill pay, reward claimed, streak milestone)",
+      "Never prompt after negative events (failed payment, long load, error screen)",
+      "Suppress prompts for users who already rated or dismissed 2×",
+      "Build in-app feedback channel — catch complaints BEFORE they hit the App Store",
+      "Respond to every 1-2 star review within 24 hours with resolution + 'we fixed it, please update your review'",
+      "Ship quick UX fixes (batch payment, multi-line) then trigger 'We listened! Rate us again?' prompt to previous negative reviewers",
+    ],
+    impact: "Every 1-star increase in rating = ~25% more organic installs",
+  },
+  {
+    title: "Lifecycle CRM Engine",
+    subtitle: "Push, SMS, email — done right",
+    icon: "📨",
+    actions: [
+      "Segment users: New migrators, Active payers, Dormant (no open in 14d), Churned (30d+)",
+      "Build automated journeys per segment with personalized timing (ML-predicted optimal send time)",
+      "Fatigue controls: max 3 push/week, suppress if opened app in last 24h",
+      "Bill reminder sequence: D-7 gentle → D-3 reminder → D-1 urgent → D+1 overdue (different tone each)",
+      "Re-engagement: 3-touch win-back (push → email → SMS with escalating incentives) for D14 churned users",
+    ],
+    impact: "Target: 15% improvement in D30 retention, 10% reduction in involuntary churn",
+  },
+  {
+    title: "Engagement & Monetization",
+    subtitle: "Turn opens into revenue",
+    icon: "💰",
+    actions: [
+      "Fix batch payment ASAP — directly unblocks NPS recovery for family plan users",
+      "Personalize 'For You' section using behavioural cohorts (data-heavy, roamer, entertainment, basic user)",
+      "A/B test upsell placement: post-payment 'Add 10GB for RM5?' vs homepage banner vs push notification",
+      "Gamify beyond streaks: monthly challenges (refer a friend, try auto-reload, set up roaming), leaderboards for family plans",
+      "Cross-sell streaming bundles (Disney+, etc.) at contextually relevant moments — not generic banners",
+    ],
+    impact: "Target: 8% lift in ARPU, 20% increase in add-on pass adoption",
+  },
+  {
+    title: "Experimentation Infrastructure",
+    subtitle: "Build the muscle",
+    icon: "🧪",
+    actions: [
+      "Establish experimentation program: hypothesis template, statistical significance thresholds, guardrail metrics",
+      "Target 5-8 experiments per month across funnel, engagement, and monetization",
+      "Build shared learnings repository — every test result documented with 'what we learned'",
+      "Weekly growth standup: review test results, pipeline new hypotheses, kill losing variants fast",
+      "QA checklist for every experiment: audience sizing, runtime calculation, logging verification",
+    ],
+    impact: "Compound effect: 5 experiments/month × 2% avg lift = 10%+ cumulative improvement per quarter",
+  },
+];
+
+function CelcomDigi() {
+  return (
+    <section id="celcomdigi" className="py-24 px-4 sm:px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <p className="text-bcg-green font-semibold text-sm tracking-widest uppercase mb-3">Growth Opportunity Analysis</p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">CelcomDigi App</h2>
+        <p className="text-gray-600 max-w-3xl mb-6">
+          Malaysia&apos;s largest telco — 20M+ subscribers, new unified app launched October 2025. 
+          Massive growth opportunity hiding in plain sight.
+        </p>
+        
+        {/* Key Metrics Bar */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+          {[
+            { label: "Total Subscribers", value: "20M+", sub: "12.9M prepaid · 7.1M postpaid" },
+            { label: "App Registered", value: "5.5M", sub: "As of Dec 2025" },
+            { label: "App Store Rating", value: "1.6★", sub: "7,400+ ratings (iOS)" },
+            { label: "Migration Gap", value: "72%", sub: "14.5M not yet on new app" },
+          ].map((m, i) => (
+            <div key={i} className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <p className="text-2xl sm:text-3xl font-bold text-navy">{m.value}</p>
+              <p className="text-xs font-semibold text-gray-500 mt-1">{m.label}</p>
+              <p className="text-xs text-gray-400 mt-0.5">{m.sub}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Problems Identified */}
+        <h3 className="text-xl font-bold text-navy mb-6 flex items-center gap-2">
+          <span className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center text-sm">🔍</span>
+          Problems Identified
+        </h3>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+          {CD_PROBLEMS.map((p, i) => (
+            <div key={i} className={`rounded-xl p-5 border ${
+              p.severity === "critical" ? "bg-red-50 border-red-200" :
+              p.severity === "high" ? "bg-amber-50 border-amber-200" :
+              "bg-gray-50 border-gray-200"
+            }`}>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-lg">{p.icon}</span>
+                <span className={`text-xs font-bold uppercase px-2 py-0.5 rounded-full ${
+                  p.severity === "critical" ? "bg-red-200 text-red-800" :
+                  p.severity === "high" ? "bg-amber-200 text-amber-800" :
+                  "bg-gray-200 text-gray-700"
+                }`}>{p.severity}</span>
+              </div>
+              <h4 className="font-bold text-navy text-sm mb-1">{p.title}</h4>
+              <p className="text-lg font-bold text-navy mb-2">{p.stat}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Growth Playbook */}
+        <h3 className="text-xl font-bold text-navy mb-6 flex items-center gap-2">
+          <span className="w-8 h-8 rounded-lg bg-bcg-green/10 flex items-center justify-center text-sm">📋</span>
+          Growth Playbook — What I&apos;d Do
+        </h3>
+        <div className="space-y-6">
+          {CD_PLAYBOOK.map((play, i) => (
+            <div key={i} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-bcg-green/40 transition-colors">
+              <div className="p-6">
+                <div className="flex items-start gap-3 mb-4">
+                  <span className="text-2xl">{play.icon}</span>
+                  <div>
+                    <h4 className="font-bold text-navy text-lg">{play.title}</h4>
+                    <p className="text-sm text-gray-500">{play.subtitle}</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-4">
+                  {play.actions.map((a, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm text-gray-700">
+                      <span className="text-bcg-green mt-0.5 flex-shrink-0">●</span>
+                      {a}
+                    </li>
+                  ))}
+                </ul>
+                <div className="bg-bcg-green/5 rounded-lg px-4 py-2 border border-bcg-green/20">
+                  <p className="text-sm font-semibold text-bcg-green-dark">📈 {play.impact}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Sources */}
+        <div className="mt-8 pt-6 border-t border-gray-100">
+          <p className="text-xs text-gray-400">
+            Sources: CelcomDigi FY2025 earnings report (Feb 2026), Apple App Store (Feb 2026, 7.4K ratings),
+            Google Play Store reviews, Reddit r/malaysia (Nov 2025), Lowyat.NET (Oct 2025), Digital News Asia.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── 90-DAY PLAN ─── */
 const PLAN_PHASES = [
   {
@@ -611,6 +825,7 @@ export default function Home() {
         <Numbers />
         <Framework />
         <CaseStudies />
+        <CelcomDigi />
         <Plan />
         <Experiments />
         <ToolStack />
