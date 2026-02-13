@@ -33,7 +33,7 @@ function Nav() {
           </a>
         </div>
         {/* Mobile hamburger */}
-        <button className="md:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
+        <button className="md:hidden p-2" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {open ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -44,7 +44,7 @@ function Nav() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-4 space-y-2">
+        <div id="mobile-nav" className="md:hidden bg-white border-t border-gray-100 px-4 pb-4 space-y-2">
           {NAV_ITEMS.map((n) => (
             <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block py-2 text-sm text-gray-700 hover:text-bcg-green">
               {n.label}
@@ -134,7 +134,7 @@ function Numbers() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {STATS.map((s, i) => (
             <div key={i} className="stat-card bg-navy-light border border-gray-700/50 rounded-2xl p-6 sm:p-8">
-              <p className="text-3xl sm:text-4xl font-black text-bcg-green">{s.value}</p>
+              <p className="text-3xl sm:text-4xl font-black text-bcg-green tabular-nums">{s.value}</p>
               <p className="mt-2 text-white font-medium">{s.label}</p>
               <p className="mt-1 text-sm text-gray-400">{s.sub}</p>
             </div>
@@ -506,7 +506,7 @@ function CelcomDigi() {
             { label: "Migration Gap", value: "72%", sub: "14.5M not yet on new app" },
           ].map((m, i) => (
             <div key={i} className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-              <p className="text-2xl sm:text-3xl font-bold text-navy">{m.value}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-navy tabular-nums">{m.value}</p>
               <p className="text-xs font-semibold text-gray-500 mt-1">{m.label}</p>
               <p className="text-xs text-gray-400 mt-0.5">{m.sub}</p>
             </div>
@@ -820,7 +820,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main>
+      <main id="main-content">
         <Hero />
         <Numbers />
         <Framework />
